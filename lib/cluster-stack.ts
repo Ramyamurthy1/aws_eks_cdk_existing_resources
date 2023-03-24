@@ -34,8 +34,8 @@ export class ClusterStack extends cdk.Stack {
     //                     ]
     //               });
 
-    const vpc =  ec2.Vpc.fromVpcAttributes(this, 'dish-replicate-vpc', {
-                    vpcId: 'vpc-085de50ab1db71c6a', // this is the vpc-id from the first stack
+    const vpc =  ec2.Vpc.fromVpcAttributes(this, 'replicate-vpc', {
+                    vpcId: 'vpc-xxxxxxxxx', // this is the vpc-id from the first stack
                     availabilityZones: ['us-west-2a', 'us-west-2b']
                 })  
                 
@@ -48,25 +48,25 @@ export class ClusterStack extends cdk.Stack {
                                 vpcSubnets: [
                                   {
                                       subnets: [
-                                        ec2.Subnet.fromSubnetAttributes(this,"dish-replicate-subnet-public1-us-west-2a", {
+                                        ec2.Subnet.fromSubnetAttributes(this,"replicate-subnet-public1-us-west-2a", {
                                               availabilityZone: "us-west-2a",
-                                              subnetId: "subnet-08586237e35794c03",
-                                              routeTableId: "rtb-058dcd032830e8ce3"
+                                              subnetId: "subnet-xxxxxxxx",
+                                              routeTableId: "rtb-xxxxxxxx"
                                         }),
-                                        ec2.Subnet.fromSubnetAttributes(this,'dish-replicate-subnet-private1-us-west-2a', {
+                                        ec2.Subnet.fromSubnetAttributes(this,'replicate-subnet-private1-us-west-2a', {
                                             availabilityZone: "us-west-2a",
-                                            subnetId: "subnet-099db10eddd9800ad",
-                                            routeTableId: "rtb-0ff4e17d7978891a3"
+                                            subnetId: "subnet-xxxxxxxx",
+                                            routeTableId: "rtb-xxxxxxxx"
                                         }),
-                                        ec2.Subnet.fromSubnetAttributes(this, 'dish-replicate-subnet-public2-us-west-2b', {
+                                        ec2.Subnet.fromSubnetAttributes(this, 'replicate-subnet-public2-us-west-2b', {
                                             availabilityZone: "us-west-2b",
-                                            subnetId: "subnet-0a9feec36bf882a0c",
-                                            routeTableId: "rtb-058dcd032830e8ce3"
+                                            subnetId: "subnet-xxxxxxxx",
+                                            routeTableId: "rtb-xxxxxxxx"
                                           }),
-                                          ec2.Subnet.fromSubnetAttributes(this,'dish-replicate-subnet-private2-us-west-2b', {
+                                          ec2.Subnet.fromSubnetAttributes(this,'replicate-subnet-private2-us-west-2b', {
                                             availabilityZone: "us-west-2b",
-                                            subnetId: "subnet-0ef5f107b2b9b6967",
-                                            routeTableId: "rtb-0967696f964f7ffb2"
+                                            subnetId: "subnet-xxxxxxxx",
+                                            routeTableId: "rtb-xxxxxxxx"
                                          }),
                                       ]
                                 }],
