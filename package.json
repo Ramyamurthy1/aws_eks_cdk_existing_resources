@@ -1,0 +1,43 @@
+{
+  "name": "multi-cluster-ts",
+  "version": "0.1.0",
+  "bin": {
+    "multi-cluster-ts": "bin/multi-cluster-ts.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "2.2.0",
+    "@types/date-and-time": "0.13.0",
+    "@types/jest": "27.0.2",
+    "@types/node": "16.11.7",
+    "aws-cdk": "2.2.0",
+    "date-and-time": "2.0.1",
+    "jest": "27.3.1",
+    "ts-jest": "27.0.7",
+    "ts-node": "10.4.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-codebuild": "1.132.0",
+    "@aws-cdk/aws-codepipeline": "1.132.0",
+    "@aws-cdk/aws-codepipeline-actions": "1.132.0",
+    "@aws-cdk/aws-dynamodb": "1.132.0",
+    "@aws-cdk/aws-eks": "1.132.0",
+    "@aws-cdk/aws-kms": "1.132.0",
+    "@aws-cdk/aws-sns": "1.132.0",
+    "@aws-cdk/aws-sns-subscriptions": "1.132.0",
+    "@aws-cdk/aws-sqs": "1.132.0",
+    "@aws-cdk/core": "1.132.0",
+    "date-and-time": "1.0.0",
+    "@types/jest": "27.0.2",
+    "@types/node": "16.11.7",
+    "ts-jest": "27.0.7",
+    "jest": "27.3.1",
+    "typescript": "~3.9.7"
+  }
+}

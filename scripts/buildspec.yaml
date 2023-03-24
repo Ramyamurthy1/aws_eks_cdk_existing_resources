@@ -1,0 +1,28 @@
+version: "0.2"
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo `ls`
+      - npm i -g  aws-cdk@1.132.0
+  pre_build:
+    commands:
+      - CLUSTER_CONFIG_JSON=infra-app/config/$CONTEXT/$CONFIG_FOLDER/config.json
+  build:
+    commands:
+      - pwd
+      - ls -lart
+      - cd $CODEBUILD_SRC_DIR
+      - echo $PATH
+      #- export PATH=$PATH:/$CODEBUILD_SRC_DIR/.npm-global/bin
+      - aws cloudformation list-exports --region us-west-2
+      #- npm install
+      - npm install
+      - cdk diff
+      - cdk deploy --outputs-file cdk-deploy.json --require-approval never
+      - cat cdk-deploy.json
+artifacts:
+  files:
+    - "**/*"
+
